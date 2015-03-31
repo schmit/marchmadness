@@ -1,0 +1,23 @@
+body {
+  padding-top: 20px;
+  padding-bottom: 20px;
+}
+
+span {
+  display: inline-block;
+  vertical-align: middle;
+}
+
+.navbar {
+  margin-bottom: 20px;
+}
+
+.chart div {
+  font: 12px sans-serif;
+  background-color: steelblue;
+  text-align: right;
+  padding: 10px;
+  margin: 1px;
+  color: white;
+  min-height: 30px;
+}

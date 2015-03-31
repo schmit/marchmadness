@@ -1,0 +1,29 @@
+<!-- extend base layout -->
+{% extends "base.html" %}
+
+{% block content %}
+{% include 'flash.html' %}
+<div class="well">
+<h1>Team statistics for <b>{{ team_name }}</b></h1>
+</div>
+
+<div class="row">
+    <div class="col-md-6">
+        {{ data.to_html(classes="table table-striped", index=False) | safe }}
+    </div>
+    <div class="col-md-6">
+        <h3>Score evolution</h3>
+        <div id="vis"></div>
+    </div>
+</div>
+
+<!-- Render Chart -->
+<script type="text/javascript">
+  function parse(url) {
+      vg.parse.spec(url, function(chart) { chart({el:"#vis"}).update(); });
+  }
+
+  parse("{{ url_for('pagerankplot', team_id=team_id) }}")
+</script>
+
+{% endblock %}

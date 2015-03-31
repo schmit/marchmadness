@@ -1,0 +1,20 @@
+<!-- extend base layout -->
+{% extends "base.html" %}
+
+{% block content %}
+{% include 'flash.html' %}
+<div class="well">
+    <h1><a href="{{ url_for('team', teamname=team_1) }}">{{ team_1 }}</a> vs <a href="{{ url_for('team', teamname=team_2) }}">{{ team_2 }}</a></h1>
+    {% if season %}
+    <h2> {{ season }}</h2>
+    {% endif %}
+</div>
+
+<div class="row">
+    <div class="col-md-12">
+        {{ data.to_html(classes="table table-striped",
+                                            index=False) | safe }}
+    </div>
+</div>
+
+{% endblock %}

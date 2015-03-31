@@ -1,0 +1,17 @@
+<!-- extend base layout -->
+{% extends "base.html" %}
+
+{% block content %}
+{% include 'flash.html' %}
+<div class="well">
+<h1>Top {{ k }} teams {{ season }}</h1>
+</div>
+
+<div class="row">
+    <div class="col-md-12">
+        {{ data.to_html(classes="table table-striped",
+                        index=False) | safe }}
+    </div>
+</div>
+
+{% endblock %}

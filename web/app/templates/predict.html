@@ -1,0 +1,20 @@
+<!-- extend base layout -->
+{% extends "base.html" %}
+
+{% block content %}
+{% include 'flash.html' %}
+<div class="well">
+    <h1>Prediction</h1>
+    <h2>{{ season }}</h2>
+</div>
+
+<div class="row">
+    <div class="col-md-12">
+        <div class="chart">
+          <div style="width: {{ prediction }}%;"><span>{{ team_1 }}: {{ prediction }}%</span></div>
+          <div style="width: {{ prediction2 }}%;"><span>{{ team_2 }}: {{ prediction2 }}%</span></div>
+        </div>
+    </div>
+</div>
+
+{% endblock %}
